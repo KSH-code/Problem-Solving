@@ -1,3 +1,3 @@
-# Hard
+# HackerRank
 
-- [HackerRank](nearest/neighboring/city.md)
+- [Hard](nearest/neighboring/city.md)
