@@ -4,4 +4,4 @@
 
 # Codeforces
 
-- [A. Winner (Rating. 1500)](codeforces/2A.md)
+- [A. Winner (Rating. 1500)](codeforces/2A.rb)
