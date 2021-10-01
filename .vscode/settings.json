@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.cap": "ruby",
+    "*.jbuilder": "ruby",
+    "*.rmd": "markdown",
+    "vector": "cpp",
+    "iosfwd": "cpp",
+    "iterator": "cpp",
+    "utility": "cpp"
+  }
+}
