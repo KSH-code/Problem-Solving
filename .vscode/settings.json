@@ -6,6 +6,9 @@
     "vector": "cpp",
     "iosfwd": "cpp",
     "iterator": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "set": "cpp",
+    "type_traits": "cpp",
+    "string": "cpp"
   }
 }
