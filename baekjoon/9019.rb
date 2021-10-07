@@ -1,4 +1,4 @@
-# It could not solve with ruby.
+# It could not be solved with ruby.
 
 require 'set'
 
