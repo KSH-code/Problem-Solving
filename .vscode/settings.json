@@ -23,6 +23,9 @@
     "initializer_list": "cpp",
     "string_view": "cpp",
     "valarray": "cpp",
-    "ios": "cpp"
+    "ios": "cpp",
+    "__config": "cpp",
+    "unordered_set": "cpp",
+    "algorithm": "cpp"
   }
 }
