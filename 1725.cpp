@@ -31,6 +31,6 @@ int main()
   cout.tie(nullptr);
   ios::sync_with_stdio(false);
 
-  while(solve());
+  solve();
   return 0;
 }
