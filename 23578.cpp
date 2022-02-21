@@ -40,7 +40,7 @@ int main()
         q.pop();
         n.k++;
         // (a + 1)^2 - a^2
-        q.push({n.i, n.k, (n.k * 2 + 1) * students[n.i]});
+        q.push({n.i, n.k, (n.k + 1 )*(n.k+1) * students[n.i]- n.k *n.k * students[n.i]});
     }
     ll result = 0;
     while (q.size()) {
