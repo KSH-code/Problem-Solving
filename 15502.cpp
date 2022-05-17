@@ -8,10 +8,6 @@
 using namespace std;
 typedef long long ll;
 
-
-int xxxx[]={-1,0,1,0};
-int yyyy[]={0,1,0,-1};
-
 void solve(){
 }
 
