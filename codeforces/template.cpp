@@ -8,6 +8,11 @@ void solve(){
 int main()
 {
     cin.tie(0)->sync_with_stdio(false);
-    solve();
+    int T = 1;
+    cin >> T;
+    while (T--) {
+        solve();
+        cout << '\n';
+    }
     return 0;
 }
