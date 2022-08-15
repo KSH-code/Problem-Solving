@@ -9,30 +9,37 @@ using namespace std;
 typedef long long ll;
 
 
-const ll MOD = 1000000007;
+const ll MOD = 1e9+7;
 
 int xxxx[]={-1,0,1,0};
 int yyyy[]={0,1,0,-1};
 
+int dp[51][51][51][51];
+
+ll dfs(int x, int a, int b, int c) {
+    auto &ref = dp[x][a][b][c];
+    if (ref != -1) return ref;
+    if (!x) return 0;
+
+    ref = 0;
+    if (a-1 >= 0) ref = (ref + dfs(x-1,a-1,b,c)) % MOD;
+    if (b-1 >= 0) ref = (ref + dfs(x-1,a,b-1,c)) % MOD;
+    if (c-1 >= 0) ref = (ref + dfs(x-1,a,b,c-1)) % MOD;
+    if (a-1 >= 0 && b-1 >= 0) ref = (ref + dfs(x-1,a-1,b-1,c)) % MOD;
+    if (b-1 >= 0 && c-1 >= 0) ref = (ref + dfs(x-1,a,b-1,c-1)) % MOD;
+    if (a-1 >= 0 && c-1 >= 0) ref = (ref + dfs(x-1,a-1,b,c-1)) % MOD;
+    if (a-1 >= 0 && b-1 >= 0 && c-1 >= 0) ref = (ref + dfs(x-1,a-1,b-1,c-1)) % MOD;
+
+    return ref;
+}
+
 void solve(){
-    int N; cin >> N;
+    int N, a,b,c; cin >> N>>a>>b>>c;
 
-    ll dp[N+1][N+1]; memset(arr, 0, sizeof(arr));
+    memset(dp, -1, sizeof dp);
+    dp[0][0][0][0] = 1;
 
-    for (int i = 0; i < 3; i++) {
-        int z; cin >> z;
-        for (int j = 1; j <= z; j++) {
-            dp[j][j]++;
-            for (int k = 1; k <= z; k++) {
-                dp[j][k] += dp[j-1][k];
-                dp[j][k] %= MOD;
-            }
-        }
-    }
-
-    ll result = 0;
-
-    cout << result;
+    cout << dfs(N,a,b,c);
 }
 
 int main()

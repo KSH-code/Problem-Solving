@@ -12,30 +12,27 @@ typedef long long ll;
 int xxxx[]={-1,0,1,0,-1,1,1,-1};
 int yyyy[]={0,1,0,-1,-1,1,-1,1};
 
-const int MAX = 1e6;
-ll f[MAX+1];
+string memo[13];
 
-void init(){
-    f[1] = 1;
-    for (int i = 2; i <= MAX; i++) {
-        for (int j = 1; j * i <= MAX; j++) f[i * j] += j;
-    }
-    for (int i = 2; i <= MAX; i++) f[i] += f[i-1] + i;
+string dfs(int x) {
+    auto &ref = memo[x];
+    if (ref.size()) return ref;
+
+    ref = dfs(x-1) + string(pow(3,max(x-1, 0)), ' ') + dfs(x-1);
+    return ref;
 }
 
-void solve(){
-    int N; cin >> N;
-    cout << f[N];
+void solve(int N){
+    memo[0] = "-";
+    cout << dfs(N);
 }
 
 int main()
 {
     cin.tie(0)->sync_with_stdio(false);
-    init();
-    int T=1;
-    cin >>T;
-    while (T--) {
-        solve();
+    int t;
+    while (cin >> t) {
+        solve(t);
         cout << '\n';
     }
     return 0;

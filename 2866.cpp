@@ -12,28 +12,31 @@ typedef long long ll;
 int xxxx[]={-1,0,1,0,-1,1,1,-1};
 int yyyy[]={0,1,0,-1,-1,1,-1,1};
 
-const int MAX = 1e6;
-ll f[MAX+1];
-
-void init(){
-    f[1] = 1;
-    for (int i = 2; i <= MAX; i++) {
-        for (int j = 1; j * i <= MAX; j++) f[i * j] += j;
-    }
-    for (int i = 2; i <= MAX; i++) f[i] += f[i-1] + i;
-}
 
 void solve(){
-    int N; cin >> N;
-    cout << f[N];
+    int N, M; cin >> N >> M;
+    string strs[N]; for (auto &a : strs) cin >> a;
+    int result = N-1;
+
+    string ss[M]; for (int i = 0; i < M; i++) ss[i] = "";
+
+    for (int i = N-1; i >= 0; i--) {
+        set<string> s;
+        for (int j = 0; j < M; j++) {
+            ss[j] = strs[i][j] + ss[j];
+            s.insert(ss[j]);
+        }
+        if (s.size() != M) result = min(result, i-1);
+    }
+
+    cout << result;
 }
 
 int main()
 {
     cin.tie(0)->sync_with_stdio(false);
-    init();
     int T=1;
-    cin >>T;
+    // cin >>T;
     while (T--) {
         solve();
         cout << '\n';
