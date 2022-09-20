@@ -1,10 +1,11 @@
 #include <bits/stdc++.h>
 
-// 6 7
-// 4 4 4 6 6 6
-// 2
-// 4
-// 6
+
+#pragma GCC optimize ("O3")
+#pragma GCC optimize ("Ofast")
+#pragma GCC optimize ("unroll-loops")
+#pragma GCC target("avx,avx2,fma")
+
 const int MAX = 3e5;
 std::vector<std::vector<int>> edges(MAX+1);
 int parents[MAX+1];
